@@ -106,7 +106,7 @@ with tab3:
     )
 
     charset = string.ascii_lowercase + string.digits
-    target_pw = st.text_input("Target password (2-3 characters only — keep it short for the demo):", value="b7")
+    target_pw = st.text_input("Target password (2-3 characters only):", value="b7")
     max_len = st.slider("Max length to search up to:", 1, 4, 3)
 
     st.markdown("#### Search space — why length matters so much")
