@@ -26,11 +26,7 @@ tab1, tab2, tab3 = st.tabs(["🧂 Salted vs Unsalted", "📋 Dictionary Attack",
 # ── TAB 1: SALTING ───────────────────────────────────────────────────────────
 with tab1:
     st.header("Salted vs Unsalted Password Hashing")
-    st.info(
-        "If two users pick the same password and hashes are stored WITHOUT a salt, "
-        "their stored hashes are **identical** — cracking one cracks both. "
-        "A random salt added per-user fixes this completely."
-    )
+   
     password = st.text_input("Enter a password to compare:", value="Password123")
 
     if password:
@@ -64,11 +60,7 @@ with tab1:
 # ── TAB 2: DICTIONARY ATTACK ─────────────────────────────────────────────────
 with tab2:
     st.header("Dictionary Attack Demo")
-    st.info(
-        "A dictionary attack tries a list of **commonly used passwords** against a hash. "
-        "It's fast because most people pick predictable passwords."
-    )
-
+    
     target_pw = st.selectbox("Choose a password to 'leak' (we'll hash it, then try to crack it):", WORDLIST[:12])
     algo = st.radio("Hash algorithm:", ["sha256", "sha1", "md5"], horizontal=True)
 
@@ -100,11 +92,7 @@ with tab2:
 # ── TAB 3: BRUTE FORCE ───────────────────────────────────────────────────────
 with tab3:
     st.header("Brute Force Attack Demo")
-    st.info(
-        "Brute force tries **every possible combination** of characters. "
-        "It always works eventually — but the longer the password, the longer it takes."
-    )
-
+   
     charset = string.ascii_lowercase + string.digits
     target_pw = st.text_input("Target password (2-3 characters only):", value="b7")
     max_len = st.slider("Max length to search up to:", 1, 4, 3)
