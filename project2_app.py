@@ -10,12 +10,12 @@ st.set_page_config(page_title="Password Hashing & Cracking", page_icon="🔑", l
 st.title("🔑 Password Cracking & Hashing Toolkit")
 st.caption("Internship Project #2 — Salting · Dictionary Attack · Brute Force | Built with Python & Streamlit")
 st.markdown("---")
-st.warning("⚠️ **Ethics notice:** Every attack here only targets hashes generated inside this app itself. Never use cracking tools on accounts or systems you don't own.", icon="⚠️")
+st.warning("**Ethics notice:** Every attack here only targets hashes generated inside this app itself. Never use cracking tools on accounts or systems you don't own.", icon="⚠️")
 
 WORDLIST = [
     "123456", "password", "123456789", "12345678", "12345",
     "qwerty", "abc123", "letmein", "welcome", "monkey",
-    "admin", "iloveyou", "sunshine", "princess", "football",
+    "admin", "anime", "sunshine", "princess", "football",
     "dragon", "master", "hello", "freedom", "whatever",
     "trustno1", "shadow", "michael", "jennifer", "superman",
     "batman", "password123", "Password123", "test123", "cybersecurity"
@@ -84,10 +84,7 @@ with tab2:
 
         if found:
             st.success(f"🎉 Password cracked: **'{found}'** — found in {attempts} attempt(s)!")
-            st.caption(
-                "Lesson: this 30-word list cracked it instantly. Real attacker wordlists "
-                "contain BILLIONS of entries from past data breaches (RockYou, HaveIBeenPwned, etc.)."
-            )
+          
 
 # ── TAB 3: BRUTE FORCE ───────────────────────────────────────────────────────
 with tab3:
@@ -126,11 +123,6 @@ with tab3:
                 st.metric("Speed", f"{int(attempts/elapsed):,} attempts/second")
             else:
                 st.error(f"Not found within length {max_len}. Tried {attempts:,} combinations.")
-
-            st.caption(
-                "Lesson: a 2-character password cracked in milliseconds. "
-                "A 12-character password with mixed case + symbols would take millions of years on the same hardware."
-            )
 
 st.markdown("---")
 st.caption("Codect Technologies Cybersecurity Internship | Project 7: Password Cracking and Hashing Algorithms")
